@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth Tamilan | SMM Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <img src="https://kommodo.ai/i/mgkcilvNpj2EmkHtdUOV"
+         alt="Growth Tamilan Logo">
+    <div>
+      <h2>GROWTH <span>TAMILAN</span></h2>
+      <small>PREMIUM SOCIAL PANEL</small>
+    </div>
+  </div>
+  <span class="status">● CLIENT PANEL</span>
+</header>
+
+<main>
+  <!-- PAGE 1: LOGIN -->
+  <section id="loginPage" class="page active">
+    <div class="hero-icon">GT</div>
+    <p class="eyebrow">YOUR GROWTH. YOUR CONTROL.</p>
+    <h1>Welcome to<br><span>Growth Tamilan.</span></h1>
+    <p class="muted">Choose your service and manage your order in one place.</p>
+
+    <form id="loginForm" class="glass">
+      <label for="mobile">MOBILE NUMBER</label>
+      <input id="mobile" type="tel" placeholder="Enter mobile number"
+             maxlength="16" required>
+      <button class="primary" type="submit">Enter Panel ↗</button>
+      <small class="hint">Frontend panel · No OTP verification</small>
+    </form>
+  </section>
+
+  <!-- PAGE 2: CATEGORY -->
+  <section id="categoryPage" class="page">
+    <p class="eyebrow">STEP 01 / SELECT PLATFORM</p>
+    <h1>Choose your <span>category</span></h1>
+    <p class="muted">Select a platform to view services.</p>
+
+    <div class="categories">
+      <button class="category instagram" data-platform="Instagram">
+        <b>◎</b><strong>Instagram</strong>
+        <small>Followers · Likes · Views</small>
+      </button>
+      <button class="category youtube" data-platform="YouTube">
+        <b>▶</b><strong>YouTube</strong>
+        <small>Subscribers · Views</small>
+      </button>
+      <button class="category" data-platform="WhatsApp">
+        <b>◉</b><strong>WhatsApp</strong>
+        <small>Coming Soon</small>
+      </button>
+      <button class="category" data-platform="Facebook">
+        <b>f</b><strong>Facebook</strong>
+        <small>Coming Soon</small>
+      </button>
+      <button class="category" data-platform="Telegram">
+        <b>➤</b><strong>Telegram</strong>
+        <small>Coming Soon</small>
+      </button>
+      <button class="category" data-platform="Twitter">
+        <b>𝕏</b><strong>Twitter / X</strong>
+        <small>Coming Soon</small>
+      </button>
+    </div>
+
+    <div class="notice">
+      ✦ More apps will be added soon.
+    </div>
+    <button class="back" data-back="loginPage">← Back</button>
+  </section>
+
+  <!-- PAGE 3: SERVICES -->
+  <section id="servicePage" class="page">
+    <p class="eyebrow">STEP 02 / SELECT SERVICE</p>
+    <h1 id="serviceTitle">Select <span>service</span></h1>
+    <p class="muted">Choose your package and price.</p>
+
+    <button class="back" data-back="categoryPage">← All categories</button>
+    <div id="serviceGroups"></div>
+
+    <div class="selection glass">
+      <div>
+        <small>SELECTED PACKAGE</small>
+        <strong id="selectedSummary">Choose a package</strong>
+      </div>
+      <strong id="selectedPrice">₹0</strong>
+      <button id="continueBtn" class="primary" disabled>
+        Continue →
+      </button>
+    </div>
+  </section>
+
+  <!-- PAGE 4: LINK -->
+  <section id="linkPage" class="page narrow">
+    <p class="eyebrow">STEP 03 / ORDER DETAILS</p>
+    <h1>Almost <span>there.</span></h1>
+    <p class="muted">Paste the correct public profile, post or channel link.</p>
+
+    <div class="glass form-card">
+      <div class="summary"><span>Platform</span><strong id="rPlatform"></strong></div>
+      <div class="summary"><span>Service</span><strong id="rService"></strong></div>
+      <div class="summary"><span>Quantity</span><strong id="rQuantity"></strong></div>
+      <div class="summary total"><span>Total</span><strong id="rPrice"></strong></div>
+
+      <label for="targetLink">PROFILE / POST / CHANNEL LINK</label>
+      <input id="targetLink" type="url" placeholder="https://..." required>
+      <button id="proceedBtn" class="primary">Proceed to Payment →</button>
+    </div>
+    <button class="back" data-back="servicePage">← Change service</button>
+  </section>
+
+  <!-- PAGE 5: PAYMENT -->
+  <section id="paymentPage" class="page narrow">
+    <p class="eyebrow">PAYMENT REVIEW</p>
+    <h1>Complete your <span>order.</span></h1>
+    <p class="muted">Scan the QR using your payment app.</p>
+
+    <div class="glass payment-card">
+      <small>AMOUNT TO PAY</small>
+      <h2 id="payAmount">₹0</h2>
+
+      <div class="qr-box">
+        <img src="https://kommodo.ai/i/UrMlwMJlz0XoeVe4GWCY"
+             alt="Payment QR Code">
+      </div>
+      <a href="https://kommodo.ai/i/UrMlwMJlz0XoeVe4GWCY"
+         target="_blank" rel="noopener">Open QR separately ↗</a>
+
+      <div class="warning">
+        Verify the recipient and amount before paying. This page does not
+        automatically verify payments.
+      </div>
+
+      <div class="summary"><span>Platform</span><strong id="pPlatform"></strong></div>
+      <div class="summary"><span>Service</span><strong id="pService"></strong></div>
+      <div class="summary"><span>Quantity</span><strong id="pQuantity"></strong></div>
+      <div class="summary"><span>Link</span><strong id="pLink" class="link"></strong></div>
+
+      <button id="submitOrder" class="primary">
+        Submit Order via WhatsApp ↗
+      </button>
+      <small class="hint">Review and send the prepared message in WhatsApp.</small>
+    </div>
+    <button class="back" data-back="linkPage">← Back</button>
+  </section>
+
+  <!-- PAGE 6: MESSAGE READY -->
+  <section id="successPage" class="page narrow">
+    <div class="success-icon">✓</div>
+    <p class="eyebrow">ORDER MESSAGE PREPARED</p>
+    <h1>You're one step <span>closer.</span></h1>
+    <p class="muted">
+      WhatsApp will open with your order details. Send the message to contact
+      Growth Tamilan.
+    </p>
+    <div class="glass form-card">
+      <strong>Next step</strong>
+      <p class="muted">
+        Your order is not confirmed until the details and payment have been
+        checked by the admin.
+      </p>
+    </div>
+    <button id="homeBtn" class="primary">Back to Categories ↗</button>
+  </section>
+</main>
+
+<footer>
+  <span>GROWTH TAMILAN</span>
+  <span>Premium SMM Panel · Frontend Only</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+                                                                         </html>
+                                                                         
